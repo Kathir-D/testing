@@ -21,7 +21,7 @@ public class Course {
                     System.out.print("Enter course name: ");
                     String name = sc.nextLine();
                     sc.nextLine();
-                    System.out.print("Enter course refrence number: ");
+                    System.out.print("Enter course refrence number: "); // should be easy to add more details
                     String refrence = sc.nextLine();
                     System.out.print("Enter course subject: ");
                     String subject = sc.nextLine();
@@ -29,7 +29,8 @@ public class Course {
                     String location = sc.nextLine();
                     System.out.print("Enter instructor: ");
                     String instructor = sc.nextLine();
-                    String Data = ("Refrence Number: " + refrence + "\nCourse Subject: " + subject + "\nRoom Location: " + location + "\nInstructor: " + instructor);
+                    String Data = ("Refrence Number: " + refrence + "\nCourse Subject: " + subject + "\nRoom Location: "
+                            + location + "\nInstructor: " + instructor);
                     HM.put(name, Data);
                     System.out.println("Course added successfully!");
                     break;
