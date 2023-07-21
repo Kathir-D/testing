@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LibraryManagement {
     public static void main(String[] args) {
@@ -72,31 +73,30 @@ public class LibraryManagement {
                 }
             } else if (sel.equals("Student")) {
                 String selection;
-                while (true){
+                while (true) {
                     System.out.println("----Library----");
                     System.out.println("Catalogue");
                     System.out.println("Check-out");
                     System.out.println("Return");
                     System.out.println("Exit");
                     selection = sc.nextLine();
-                    if (selection.equals("Catalogue")){
-                        for (int i = 0; i < Books.size(); i++){
+                    if (selection.equals("Catalogue")) {
+                        for (int i = 0; i < Books.size(); i++) {
                             System.out.println(Books.get(i));
                         }
-
 
 
                     } else if (selection.equals("Check-out")) {
                         System.out.println("What book to checkout: ");
                         String checkout = sc.nextLine();
                         boolean CO = Books.contains(checkout);
-                        if (CO == true){
+                        if (CO) {
                             System.out.println(checkout + " is in the catalogue");
                             System.out.println("Do you want to check it out?");
                             System.out.println("Yes");
                             System.out.println("No");
                             String str = sc.nextLine();
-                            if (str.equals("Yes")){
+                            if (str.equals("Yes")) {
                                 Books.remove(checkout);
                                 System.out.println("Removed " + checkout + " from the catalogue");
                                 System.out.println("Enjoy your book!");
@@ -108,8 +108,6 @@ public class LibraryManagement {
                         }
 
 
-
-
                     } else if (selection.equals("Return")) {
                         System.out.println("What book do you want to return?");
                         String Return = sc.nextLine();
@@ -117,7 +115,7 @@ public class LibraryManagement {
                         System.out.println("Yes");
                         System.out.println("No");
                         String str = sc.nextLine();
-                        if (str.equals("Yes")){
+                        if (str.equals("Yes")) {
                             Books.add(Return);
                             System.out.println("Added " + Return + " back to the catalogue");
                             System.out.println("Hope you liked it!");

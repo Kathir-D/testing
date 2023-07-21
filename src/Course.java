@@ -1,18 +1,18 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class Course {
     public static void main(String[] args) {
-        HashMap<String,String> HM = new HashMap<>();
+        HashMap<String, String> HM = new HashMap<>();
         Scanner sc = new Scanner(System.in);
 
         Menu();
 
         int option;
-        do
-        {
-            option = sc.nextInt ();
+        do {
+            option = sc.nextInt();
 
-            switch (option)
-            {
+            switch (option) {
                 case 1:
                     System.out.print("Enter course name: ");
                     String name = sc.nextLine();
@@ -35,7 +35,7 @@ public class Course {
                     System.out.println("What is the coruse name?");
                     String na = sc.nextLine();
                     sc.nextLine();
-                    if (HM.containsKey(na)){
+                    if (HM.containsKey(na)) {
                         String data = HM.get(na);
                         System.out.println(data);
                     } else {
@@ -44,17 +44,17 @@ public class Course {
                     Menu();
                     break;
                 case 3:
-                    System.out.println ("Exiting");
+                    System.out.println("Exiting");
                     break;
                 default:
-                    System.out.println ("Invaild choice try again.");
+                    System.out.println("Invaild choice try again.");
                     break;
             }
         }
         while (option != 3);
     }
 
-    public static void Menu(){
+    public static void Menu() {
         System.out.println("----Menu----");
         System.out.println("1. Add Course");
         System.out.println("2. Get Course");

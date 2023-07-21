@@ -1,5 +1,6 @@
-import java.awt.print.Book;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class SchoolRecordSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -27,36 +28,30 @@ public class SchoolRecordSystem {
                 System.out.println("Added as student number: " + lastValue);
 
 
-
-
-
             } else if (selection.equals("Get")) {
                 System.out.println("What is the student number");
                 int rollNum = sc.nextInt();
                 sc.nextLine();
-               if (rollNum > 0){
-                System.out.println("Student number: " + rollNum);
-                System.out.println("Student name: " + SchoolRecord.get(rollNum));
-               } else {
-                   System.out.println("ERROR: Invalid");
-               }
+                if (rollNum > 0) {
+                    System.out.println("Student number: " + rollNum);
+                    System.out.println("Student name: " + SchoolRecord.get(rollNum));
+                } else {
+                    System.out.println("ERROR: Invalid");
+                }
 
 
-
-
-
-            }  else if (selection.equals("Remove")) {
+            } else if (selection.equals("Remove")) {
                 System.out.println("What Student do you want to remove?");
                 String choice = sc.nextLine();
                 boolean yep = SchoolRecord.contains(choice);
-                if (yep == true){
+                if (yep) {
                     System.out.println("Student name: " + choice);
                     System.out.println("Are you sure you want to remove this student?");
                     System.out.println("Yes");
                     System.out.println("No");
                     String str = sc.nextLine();
                     int x = SchoolRecord.indexOf(choice);
-                    if (str.equals("Yes")){
+                    if (str.equals("Yes")) {
                         SchoolRecord.remove(x);
                         System.out.println("Removed " + choice + " from the record.");
                     } else {
@@ -75,19 +70,17 @@ public class SchoolRecordSystem {
                 System.out.println("Yes");
                 System.out.println("No");
                 String str = sc.nextLine();
-                if (str.equals("Yes")){
+                if (str.equals("Yes")) {
                     System.out.println("What is the new name?");
                     String Name = sc.nextLine();
-                    SchoolRecord.set(Correct,Name);
-
-
+                    SchoolRecord.set(Correct, Name);
 
 
                 } else {
                     System.out.println("ERROR: Invalid");
                 }
 
-            }  else if (selection.equals("End")) {
+            } else if (selection.equals("End")) {
                 break;
 
 

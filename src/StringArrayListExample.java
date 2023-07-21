@@ -1,8 +1,7 @@
 import java.util.ArrayList;
-public class StringArrayListExample
-{
-    public static void main (String[]args)
-    {
+
+public class StringArrayListExample {
+    public static void main(String[] args) {
 
         ArrayList<String> stringArrayList = new ArrayList<>();
         stringArrayList.add("apple");
@@ -12,7 +11,7 @@ public class StringArrayListExample
         stringArrayList.add("something");
 
 
-        for (int i=0 ; i < stringArrayList.size() ; i++ ) {
+        for (int i = 0; i < stringArrayList.size(); i++) {
             System.out.println(stringArrayList.get(i));
         }
 

@@ -1,22 +1,22 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class Map {
     public static void main(String[] args) {
-        HashMap<String,String> HM = new HashMap<>();
+        HashMap<String, String> HM = new HashMap<>();
         Scanner sc = new Scanner(System.in);
 
 
         int option;
-        do
-        {
+        do {
             System.out.println("Menu:");
             System.out.println("1. Add Contact");
             System.out.println("2. Get Contact Information");
             System.out.println("3. Exit");
             System.out.print("Enter the number: ");
-            option = sc.nextInt ();
+            option = sc.nextInt();
 
-            switch (option)
-            {
+            switch (option) {
                 case 1:
                     System.out.println("Enter name: ");
                     String name = sc.nextLine();
@@ -35,16 +35,16 @@ public class Map {
                     System.out.println("What is the name for the data you want to get?");
                     String na = sc.nextLine();
                     sc.nextLine();
-                    if (HM.containsKey(na)){
+                    if (HM.containsKey(na)) {
                         String data = HM.get(na);
                         System.out.println(data);
                     }
                     break;
                 case 3:
-                    System.out.println ("Exiting");
+                    System.out.println("Exiting");
                     break;
                 default:
-                    System.out.println ("Invaild choice try again.");
+                    System.out.println("Invaild choice try again.");
                     break;
             }
         }

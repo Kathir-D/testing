@@ -1,13 +1,14 @@
-import java.util.*;
-public class HatMap
-{
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class HatMap {
     public static void main(String[] args) {
-        HashMap<String,String> hm = new HashMap<>();
-        HashMap<String,String> mh = new HashMap<>();
+        HashMap<String, String> hm = new HashMap<>();
+        HashMap<String, String> mh = new HashMap<>();
         Scanner sc = new Scanner(System.in);
 
         String sel = null;
-        while (true){
+        while (true) {
             System.out.println("----Contact----");
             System.out.println("----List----");
             System.out.println("Add");
@@ -16,13 +17,13 @@ public class HatMap
             System.out.println("Exit");
 
             sel = sc.nextLine();
-            if (sel.equals("Add")){
+            if (sel.equals("Add")) {
                 System.out.println("Enter a name");
                 String name = sc.nextLine();
                 System.out.println("Enter the number for the name");
                 String num = sc.nextLine();
-                hm.put(name,num);
-                mh.put(num,name);
+                hm.put(name, num);
+                mh.put(num, name);
 
 
             } else if (sel.equals("Get")) {
@@ -33,7 +34,7 @@ public class HatMap
                     System.out.println("Who do you the number for?");
                     String get = sc.nextLine();
                     boolean yep = hm.containsKey(get);
-                    if (yep == true) {
+                    if (yep) {
                         String gets = hm.get(get);
                         System.out.println("Name: " + get);
                         System.out.println("Number: " + gets);
@@ -44,7 +45,7 @@ public class HatMap
                     System.out.println("What is the number you want the name for?");
                     String nums = sc.nextLine();
                     boolean yep = mh.containsKey(nums);
-                    if (yep == true) {
+                    if (yep) {
                         String hums = mh.get(nums);
                         System.out.println("Number: " + nums);
                         System.out.println("Name: " + hums);
@@ -62,7 +63,7 @@ public class HatMap
                     System.out.println("Who do you want to remove?");
                     String RemNameName = sc.nextLine();
                     boolean rev = hm.containsKey(RemNameName);
-                    if (rev == true) {
+                    if (rev) {
                         String RemNameNum = hm.get(RemNameName);
                         System.out.println("Name: " + RemNameName);
                         System.out.println("Number: " + RemNameNum);
@@ -84,7 +85,7 @@ public class HatMap
                     System.out.println("Whats the number of the person you want to remove");
                     String RemNumNum = sc.nextLine();
                     boolean m = mh.containsKey(RemNumNum);
-                    if (m == true){
+                    if (m) {
                         String RemNumName = mh.get(RemNumNum);
                         System.out.println("Name: " + RemNumName);
                         System.out.println("Number: " + RemNumNum);
@@ -108,13 +109,12 @@ public class HatMap
             } else if (sel.equals("Exit")) {
                 break;
             } else {
-                for (int i = 0; i < 5; i++){
+                for (int i = 0; i < 5; i++) {
                     System.out.println("Error: Invaild Input");
                 }
             }
 
         }
-        
 
 
     }
