@@ -1,5 +1,4 @@
-//Broken
-//im not fixing this
+//Fixed delete option
 
 import java.util.Scanner;
 public class AnnoyingGroceryList
@@ -13,12 +12,13 @@ public class AnnoyingGroceryList
         String[] items = new String[5];
         int itemDelete = -1;
         int x = -1;
+        boolean check = false;
 
-        items[0] = "bananas";
-        items[1] = "apples";
-        items[2] = "cucumbers";
-        items[3] = "carrots";
-        items[4] = "oranges";
+        items[0] = "Bananas";
+        items[1] = "Apples";
+        items[2] = "Cucumbers";
+        items[3] = "Carrots";
+        items[4] = "Oranges";
 
         itemPrices[0] = 0.44;
         itemPrices[1] = 0.99;
@@ -63,29 +63,23 @@ public class AnnoyingGroceryList
                     itemPounds[4] = sc.nextFloat ();
                     System.out.println ("Choose another option...");
                     break;
-                case "Delete":System.out.
-                        println ("What product do you want to change the weight for?");
+                case "Delete":System.out.println ("What product do you want to change the weight for?");
                     String itemToDelete = sc.nextLine ();
                     for (int i = 0; i < items.length; i++)
                     {
-                        x = i;
-                        if (itemToDelete.equals (items[i]))
-                        {
-                            itemDelete = x;
-                        }
+                       if (itemToDelete.equals(items[i])){
+                           check = true;
+                           x = i;
+                       }
                     }
-                    if (itemDelete >= 0)
-                    {
-                        System.out.println ("Chose item " + items[x]);
-                        System.out.println ("Enter the new weight for " + items[x] + ": ");
-                        itemPounds[x] = sc.nextFloat ();
+                    if (check == true){
+                        System.out.println("Enter the new weight for " + items[x]);
+                        itemPounds[x] = sc.nextFloat();
+                        System.out.println("Succsefully updated weight for " + items[x]);
+                    } else {
+                        System.out.println("Error: Unknown");
                     }
-                    else
-                    {
-                        System.out.println ("Product not found...");
-                    }
-                    sc.nextLine ();
-                    System.out.println ("Choose another option...");
+
                     break;
                 case "Checkout":
                     double price =
