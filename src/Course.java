@@ -4,15 +4,11 @@ public class Course {
         HashMap<String,String> HM = new HashMap<>();
         Scanner sc = new Scanner(System.in);
 
+        Menu();
 
         int option;
         do
         {
-            System.out.println("----Menu----");
-            System.out.println("1. Add Course");
-            System.out.println("2. Get Course");
-            System.out.println("3. Exit");
-            System.out.print("Enter the number: ");
             option = sc.nextInt ();
 
             switch (option)
@@ -33,6 +29,7 @@ public class Course {
                             + location + "\nInstructor: " + instructor);
                     HM.put(name, Data);
                     System.out.println("Course added successfully!");
+                    Menu();
                     break;
                 case 2:
                     System.out.println("What is the coruse name?");
@@ -41,7 +38,10 @@ public class Course {
                     if (HM.containsKey(na)){
                         String data = HM.get(na);
                         System.out.println(data);
+                    } else {
+                        System.out.println("Error");
                     }
+                    Menu();
                     break;
                 case 3:
                     System.out.println ("Exiting");
@@ -52,6 +52,14 @@ public class Course {
             }
         }
         while (option != 3);
+    }
+
+    public static void Menu(){
+        System.out.println("----Menu----");
+        System.out.println("1. Add Course");
+        System.out.println("2. Get Course");
+        System.out.println("3. Exit");
+        System.out.print("Enter the number: ");
     }
 }
       /*  <key,value>;
