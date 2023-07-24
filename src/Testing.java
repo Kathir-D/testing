@@ -1,7 +1,8 @@
 //wtf is this
+/*
 import java.util.Scanner;
 import java.util.ArrayList;
-class Main {
+class Testing {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ArrayList<Integer> integers = new ArrayList<Integer>();
@@ -30,3 +31,4 @@ class Main {
         System.out.println(integers);
     }
 }
+*/
