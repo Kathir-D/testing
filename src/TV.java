@@ -71,6 +71,8 @@ public class TV {
         TV tv1 = new TV(true,3,111); // set initial values
         TV tv2 = new TV(true,3,83);  // for tv2
 
+
+        System.out.println(tv1 + " : " + tv2);
         System.out.println("tv1 channel is " + tv1.channel + " and volume level is " + tv1.volumeLevel + " and power status is " + tv1.isTVON());
         System.out.println("tv2 channel is " + tv2.channel + " and volume level is " + tv2.volumeLevel + " and power status is " + tv2.isTVON());
 
@@ -79,24 +81,7 @@ public class TV {
 
         System.out.println("tv1 channel is " + tv1.channel + " and volume level is " + tv1.volumeLevel + " and power status is " + tv1.isTVON());
         System.out.println("tv2 channel is " + tv2.channel + " and volume level is " + tv2.volumeLevel + " and power status is " + tv2.isTVON());
+        System.out.println(tv1 + " : " + tv2);
 
     }
 }
-
-
-
-/*
-class SimpleCircle{
-    double radius;
-
-    SimpleCircle(){
-        radius = 1;
-    }
-    SimpleCircle(double newRadius){
-        radius = newRadius;
-    }
-    double getArea(){
-        return 2 * radius * Math.PI;
-    }
-}
- */
