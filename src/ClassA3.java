@@ -1,26 +1,29 @@
+// Hierarchical inheritance
 public class ClassA3 {
 
     public int Size;
     public int Bounciness;
     public int Color;
 
-    public ClassA3(int StartSize,int StartBounciness, int StartColor){
+    public ClassA3(int StartSize, int StartBounciness, int StartColor) {
         Size = StartSize;
         Bounciness = StartBounciness;
         Color = StartColor;
     }
 
-    public void setSize(int i){
+    public void setSize(int i) {
         Size = i;
     }
 
-    public int getSize(){
+    public int getSize() {
         return Size;
     }
-    public int getBounciness(){
+
+    public int getBounciness() {
         return Bounciness;
     }
-    public int getColor(){
+
+    public int getColor() {
         return Color;
     }
 
@@ -30,5 +33,4 @@ public class ClassA3 {
         System.out.println("Color: " + obj2.getColor());
         System.out.println("Bounciness: " + obj2.getBounciness());
     }
-
 }

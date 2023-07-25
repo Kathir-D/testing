@@ -1,4 +1,4 @@
-
+// Multilevel inheritance
 public class ClassB2 extends ClassA2 {
 
     public int Color;

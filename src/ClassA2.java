@@ -1,3 +1,4 @@
+// Multilevel inheritance
 public class ClassA2 {
 
     public int Size;

@@ -1,4 +1,4 @@
-
+// Hierarchical inheritance
 public class ClassC2 extends ClassB2 {
 
     public int Bouncienes;
