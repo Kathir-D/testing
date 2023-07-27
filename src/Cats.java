@@ -1,5 +1,5 @@
 public class Cats extends Animal {
-    public Cat() {
+    public Cats() {
         super("Woof"); // Call the superclass constructor with the sound "Woof"
     }
 
@@ -8,7 +8,7 @@ public class Cats extends Animal {
     }
 
     public static void main(String[] args) {
-        Cat cat = new Cat();
+        Cats cat = new Cats();
         cat.sounds();
         cat.makeSound();
     }
