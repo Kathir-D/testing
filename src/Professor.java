@@ -1,4 +1,4 @@
-class Professor extends Employee {
+class Professor extends Employeee {
     public Professor(String name) {
         super(name);
     }

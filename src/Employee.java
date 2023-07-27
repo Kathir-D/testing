@@ -1,72 +1,81 @@
 import java.util.Scanner;
+     abstract class Employee {
 
-public class Employee {
-        int salary;
-        int hoursWorked;
-        final String name;
+        public String emp_id;
+        public String name;
+        public String role;
 
-        public Employee(String name) {
-        this.name = name;
+        public Employee(String emp_id, String name) {
+            this.emp_id = emp_id;
+            this.name = name;
         }
 
-        public void getInfo(int hoursWorked, int salary) {
-            this.hoursWorked = hoursWorked;
-            this.salary = salary;
-        }
+        abstract double calculateSalary();
 
-        public void addSalary() {
-            if (salary < 200) {
-                salary += 10;
-            }
-        }
-
-        public void additionalWork() {
-            if (hoursWorked > 6) {
-                salary += 5;
-            }
-        }
-
-        public int getSalary() {
-            return salary;
-        }
-
-        public int getHoursWorked(){
-            return hoursWorked;
-        }
+        abstract public void displayInfo();
 
 
-    public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            System.out.print("What's your name: ");
-            String x = sc.nextLine();
-            System.out.print("What's the number of hours worked: ");
-            int y = sc.nextInt();
-            System.out.print("What's your salary: ");
-            int z = sc.nextInt();
 
-            Employee prof = new Professor(x);
-            prof.getInfo(y, z); // Starting values
-            prof.addSalary(); // Adding 10 to the salary
-            prof.additionalWork(); // Adding 5$ to the salary because hours worke
-            int finalSalary = prof.getSalary(); // Getting the final salary of the professor
-            System.out.println("Final Salary of Professor " + prof.name + ": $" + finalSalary);
+         public static void main(String[] args) {
+             Scanner scanner = new Scanner(System.in);
 
-        }
-    }
+             while (true) {
+                 System.out.print("Enter the job role (Manager/Developer/Salesperson) or 'quit' to exit: ");
+                 String role = scanner.nextLine().toLowerCase();
 
+                 if (role.equals("quit")) {
+                     break;
+                 }
 
-/*
-Q6 Create a class 'Employee' with below requirements and print the final salary:
+                 Employee employee = null;
 
-=> name of employee is final
+                 switch (role) {
+                     case "manager":
+                         System.out.print("Enter Base Salary: ");
+                         double base_salary = scanner.nextDouble();
+                         System.out.print("Enter Bonus: ");
+                         double bonus = scanner.nextDouble();
+                         scanner.nextLine(); // Read the newline character left in the buffer
+                         System.out.print("Enter Employee ID: ");
+                         String emp_id = scanner.nextLine();
+                         System.out.print("Enter Name: ");
+                         String name = scanner.nextLine();
+                         employee = new Manager(emp_id, name, base_salary, bonus);
+                         break;
+                     case "developer":
+                         System.out.print("Enter Base Salary: ");
+                         double base_salary_dev = scanner.nextDouble();
+                         System.out.print("Enter Bonus: ");
+                         double bonus_dev = scanner.nextDouble();
+                         scanner.nextLine(); // Read the newline character left in the buffer
+                         System.out.print("Enter Employe ID: ");
+                         String emp_id_dev = scanner.nextLine();
+                         System.out.print("Enter Name: ");
+                         String name_dev = scanner.nextLine();
+                         employee = new Developer(emp_id_dev, name_dev, base_salary_dev, bonus_dev);
+                         break;
+                     case "salesperson":
+                         System.out.print("Enter Base Salary: ");
+                         double base_salary_sales = scanner.nextDouble();
+                         System.out.print("Enter Bonus: ");
+                         double bonus_sales = scanner.nextDouble();
+                         scanner.nextLine(); // Read the newline character left in the buffer
+                         System.out.print("Enter Employe ID: ");
+                         String emp_id_sales = scanner.nextLine();
+                         System.out.print("Enter Name: ");
+                         String name_sales = scanner.nextLine();
+                         employee = new Salesperson(emp_id_sales, name_sales, base_salary_sales, bonus_sales);
+                         break;
+                     default:
+                         System.out.println("Invalid input. Please try again.");
+                         continue;
+                 }
 
-=>use runtime polymorphism.
+                 System.out.println("\nEmployee Information:");
+                 employee.displayInfo();
+                 System.out.println();
+             }
 
-1. getInfo() method that takes the number of hours of work per day and salary of employee as parameter.
+         }
 
-2. addSalary() method that will add 10$ to the salary of the employee if it is less than 200$.
-
-3. additionalWork() method that will add 5$ to the salary of the employee if the hours spent on work is more than 6 hours.
-
-Sub class: professor…'
- */
+     }
