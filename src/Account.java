@@ -1,8 +1,28 @@
 class Account {
+    protected int accountId;
+    protected double balance;
 
+    public Account(int accountId) {
+        this.accountId = accountId;
+        this.balance = 0.0;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        balance -= amount;
+    }
+
+    public void calculateInterest() {
+        // Default implementation (no interest calculation)
+    }
+
+    public double getBalance() {
+        return balance;
+    }
 }
-
-
 
 /*
 Bank :

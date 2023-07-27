@@ -1,7 +1,24 @@
 class CheckingAccount extends Account {
+    private static final double INTEREST_RATE = 0.05;
+    private static final int MIN_DURATION_FOR_INTEREST = 24; // Minimum duration for collected interest is 2 years (24 months)
 
+    public CheckingAccount(int accountId) {
+        super(accountId);
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        System.out.println("Checking account: You can withdraw anytime.");
+        super.withdraw(amount);
+    }
+
+    @Override
+    public void calculateInterest() {
+        double interest = balance * INTEREST_RATE;
+        balance += interest;
+        System.out.println("Checking account interest calculated: $" + interest);
+    }
 }
-
 
 
 /*
